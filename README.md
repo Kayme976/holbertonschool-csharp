@@ -1,1 +1,1 @@
-# holbertonschool-csharp
+# is start the first project of this week holbertonschool-csharp, it' s my first project in spécialisation
