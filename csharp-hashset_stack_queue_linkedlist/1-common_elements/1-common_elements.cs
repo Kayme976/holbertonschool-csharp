@@ -1,19 +1,17 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-    class List
-    {
+class List
+{
     public static List<int> CommonElements(List<int> list1, List<int> list2)
     {
-        List<int> List3 = new List<int>();
+        // Create a SortedSet from List
+        var sortedSet = new SortedSet<int>(list1);
 
-        foreach (var elem in list1)
-        {
-            if (list2.Contains(elem))
-            {
-                List3.Add(elem);
-            }
-        }
-        return List3;
+        // Intersect sorted set with second collection
+        sortedSet.IntersectWith(list2);
+
+        // Convert SortedSet back to List and return
+        return new List<int>(sortedSet);
     }
 }
