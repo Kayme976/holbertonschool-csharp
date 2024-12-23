@@ -1,28 +1,46 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+
 
 class MyQueue
 {
     public static Queue<string> Info(Queue<string> aQueue, string newItem, string search)
     {
-        Console.WriteLine($"Number of items: {aQueue.Count}");
+        // Take size of queue
+        var count = aQueue.Count;
+        Console.WriteLine("Number of items: {0}", count);
 
-        if (aQueue.Count == 0)
+        // Peek top value if queue not empty
+        if (count > 0)
         {
-            Console.WriteLine("Queue is empty");
+            Console.WriteLine("First item: {0}", aQueue.Peek());
         }
         else
         {
-            Console.WriteLine($"First item: {aQueue.Peek()}");
+            Console.WriteLine("Queue is empty");
         }
-        aQueue.Enqueue(newItem);
 
-        Console.WriteLine($"Queue contains \"{search}\": {aQueue.Contains(search)}");
+        // Determine if stack contains value
+        var containsSearch = aQueue.Contains(search);
+        Console.WriteLine("Queue contains \"{0}\": {1}", search, containsSearch);
 
-        if (aQueue.Contains(search))
+        // If search value present, remove items up to and including value 
+        if (containsSearch)
         {
-            while (aQueue.Dequeue() != search) ;
+            while (true)
+            {
+                var item = aQueue.Peek();
+                aQueue.Dequeue();
+                if (item == search)
+                {
+                    break;
+                }
+            }
         }
+
+         // Add new item to stack
+        aQueue.Enqueue(newItem);
+        
         return aQueue;
     }
 }
