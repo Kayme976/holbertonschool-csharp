@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 struct Dog
 {
@@ -19,11 +19,12 @@ struct Dog
     {
         return $"Dog Name: {name}\nAge: {age}\nOwner: {owner}\nRating: {rating}";
     }
+
 }
 
 enum Rating
 {
     Good,
-    Great
+    Great,
     Excellent
 }

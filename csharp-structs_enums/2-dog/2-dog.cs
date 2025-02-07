@@ -1,4 +1,4 @@
-using Sytem;
+﻿using System;
 
 struct Dog
 {
@@ -7,7 +7,7 @@ struct Dog
     public string owner;
     public Rating rating;
 
-    public Dog(string_name, float_age, string_owner, Rating_rating)
+    public Dog(string _name, float _age, string _owner, Rating _rating)
     {
         name = _name;
         age = _age;
